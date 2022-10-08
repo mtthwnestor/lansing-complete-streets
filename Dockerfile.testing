@@ -1,0 +1,15 @@
+# Build with: docker build -t rails-testing -f Dockerfile.testing .
+# Use the image to run and test your app in a clean consistent container.
+# Example: docker run --rm -it -v $PWD:/app -p 3000:3000 rails-testing
+FROM ruby:alpine
+
+WORKDIR /app
+VOLUME /app
+COPY ./rails-testing.sh /entrypoint.sh
+
+RUN apk add --no-cache build-base tzdata nodejs yarn sqlite-dev postgresql-dev mysql-dev git
+
+RUN gem install rails bundler
+
+EXPOSE 3000
+ENTRYPOINT "/entrypoint.sh"

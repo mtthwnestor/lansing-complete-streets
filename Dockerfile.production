@@ -1,0 +1,17 @@
+# Build with: docker build -t my-rails-app -f Dockerfile.production .
+# Use the image to package your app in a standalone container.
+# Example: docker run -d my-rails-app
+FROM ruby:alpine
+
+WORKDIR /app
+COPY . .
+
+RUN apk add --no-cache build-base tzdata nodejs yarn sqlite-dev postgresql-dev mysql-dev git
+
+RUN gem install rails bundler
+RUN bundle install
+ENV RAILS_ENV=production
+RUN bundle exec rails assets:precompile
+
+EXPOSE 3000
+CMD ["rails", "server", "-b", "0.0.0.0"]
