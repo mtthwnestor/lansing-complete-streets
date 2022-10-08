@@ -1,6 +1,6 @@
 # README
 
-We are working to bring safe [protected cycling infrastructure](http://www.protectedintersection.com/) to Michigan Avenu and other areas in the Greater Lansing area.
+We are working to bring safe, [protected cycling infrastructure](http://www.protectedintersection.com/) to Michigan Avenue and elsewhere in the Greater Lansing area.
 
 * Ruby version: `3.1.2`
 
