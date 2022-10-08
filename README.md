@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+We are working to bring safe [protected cycling infrastructure](http://www.protectedintersection.com/) to Michigan Avenu and other areas in the Greater Lansing area.
 
-Things you may want to cover:
+* Ruby version: `3.1.2`
 
-* Ruby version
+* Rails version: `7.0.4`
 
-* System dependencies
+* Depndencies: `bundle install`
 
-* Configuration
+* Database creation: `rails db:create`
 
-* Database creation
+* Database initialization: `rails db:migrate`
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Deployment instructions: Build and run docker image.
