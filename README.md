@@ -6,10 +6,10 @@ We are working to bring safe [protected cycling infrastructure](http://www.prote
 
 * Rails version: `7.0.4`
 
-* Depndencies: `bundle install`
+* Depndencies: Run `bundle install`
 
-* Database creation: `rails db:create`
+* Database creation: Run `rails db:create`
 
-* Database initialization: `rails db:migrate`
+* Database initialization: Run `rails db:migrate`
 
 * Deployment instructions: Build and run docker image.
