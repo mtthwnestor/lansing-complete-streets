@@ -5,9 +5,13 @@
 #   Example: "bundle install" then "bin/rails generate Home index --skip-routes
 FROM ruby:3.1.2-alpine3.16
 
-WORKDIR /app
-
+# Add required packages.
 RUN apk add --no-cache build-base tzdata nodejs yarn sqlite-dev postgresql-dev mysql-dev git
 RUN gem install rails:7.0.4 bundler:2.3.23
+
+# Add user and configure directory.
+RUN adduser -D rails
+USER rails
+WORKDIR /app
 
 CMD ["/bin/sh"]
