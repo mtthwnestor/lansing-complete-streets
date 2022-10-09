@@ -8,7 +8,6 @@ VOLUME /app
 COPY ./rails-testing.sh /entrypoint.sh
 
 RUN apk add --no-cache build-base tzdata nodejs yarn sqlite-dev postgresql-dev mysql-dev git
-
 RUN gem install rails bundler
 
 EXPOSE 3000

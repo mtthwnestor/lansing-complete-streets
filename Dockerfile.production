@@ -7,10 +7,11 @@ WORKDIR /app
 COPY . .
 
 RUN apk add --no-cache build-base tzdata nodejs yarn sqlite-dev postgresql-dev mysql-dev git
-
 RUN gem install rails bundler
 RUN bundle install
+
 ENV RAILS_ENV=production
+
 RUN bundle exec rails assets:precompile
 
 EXPOSE 3000
