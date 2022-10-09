@@ -1,4 +1,4 @@
-# README
+# Lansing Complete Streets
 
 We are working to bring safe, [protected cycling infrastructure](http://www.protectedintersection.com/) to Michigan Avenue and elsewhere in the Greater Lansing area.
 
