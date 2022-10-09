@@ -16,6 +16,7 @@ VOLUME /app
 COPY --chown=rails ./entrypoint.sh /entrypoint.sh
 
 ENV RAILS_ENV=test
+ENV GEM_HOME=/home/rails/gems
 
 EXPOSE 3000
 ENTRYPOINT [ "/entrypoint.sh" ]
