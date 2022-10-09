@@ -3,11 +3,11 @@
 # Example: docker run --rm -it -v $PWD:/app rails-toolbox rails new --skip-bundle demo
 # WARNING: You might need to run commands in an interactive shell on the container at first.
 #   Example: "bundle install" then "bin/rails generate Home index --skip-routes
-FROM ruby:alpine
+FROM ruby:3.1.2-alpine3.16
 
 WORKDIR /app
 
 RUN apk add --no-cache build-base tzdata nodejs yarn sqlite-dev postgresql-dev mysql-dev git
-RUN gem install rails bundler
+RUN gem install rails:7.0.4 bundler:2.3.23
 
 CMD ["/bin/sh"]
