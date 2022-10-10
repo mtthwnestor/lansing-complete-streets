@@ -1,6 +1,6 @@
-# Build with: docker build -t rails-testing -f Dockerfile.testing .
-# Use the image to run and test your app in a clean consistent container.
-# Example: docker run --rm -it -v $PWD:/app -p 3000:3000 rails-testing
+# Build with: docker build -t my-app-test -f Dockerfile.testing .
+# Use the image to run and test your app in a clean and consistent environment.
+# Example: docker run --rm -it -p 3000:3000 my-app-test
 FROM ruby:3.1.2-alpine3.16
 
 # Add required packages.
@@ -11,12 +11,16 @@ RUN gem install rails:7.0.4 bundler:2.3.23
 RUN adduser -D rails
 USER rails
 WORKDIR /app
-VOLUME /app
-
-COPY --chown=rails ./entrypoint.sh /entrypoint.sh
+# To copy files as our new user, use: COPY --chown=rails . .
+COPY --chown=rails . .
 
 ENV RAILS_ENV=test
+#ENV RAILS_MASTER_KEY=0123456789abcdefghij0123456789ab
 ENV GEM_HOME=/home/rails/gems
+ENV RAILS_SERVE_STATIC_FILES=true
+
+RUN bundle config set without 'development' && bundle install --jobs=3 --retry=3
+RUN rails assets:clobber assets:precompile
 
 EXPOSE 3000
 ENTRYPOINT [ "/entrypoint.sh" ]
