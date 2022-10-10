@@ -17,10 +17,10 @@ COPY --chown=rails . .
 ENV RAILS_ENV=production
 #ENV RAILS_MASTER_KEY=0123456789abcdefghij0123456789ab
 ENV GEM_HOME=/home/rails/gems
+#ENV RAILS_SERVE_STATIC_FILES=true
 
-RUN bundle config set without 'development test'
-RUN bundle install --jobs=3 --retry=3
-RUN bundle exec rails assets:precompile
+RUN bundle config set without 'development test' && bundle install --jobs=3 --retry=3
+RUN rails assets:clobber assets:precompile
 
 EXPOSE 3000
 ENTRYPOINT [ "/app/entrypoint.sh" ]
