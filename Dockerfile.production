@@ -1,6 +1,6 @@
-# Build with: docker build -t my-rails-app -f Dockerfile.production .
+# Build with: docker build -t my-app-prod -f Dockerfile.production .
 # Use the image to package your app in a standalone container.
-# Example: docker run -d my-rails-app
+# Example: docker run -d -p 3000:3000 my-app-prod
 FROM ruby:3.1.2-alpine3.16
 
 # Add required packages.
