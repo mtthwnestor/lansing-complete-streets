@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore bundler gem cache. Mount this to GEM_HOME.
+/bundle_cache
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-*
