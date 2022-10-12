@@ -4,15 +4,16 @@
 # Example: docker run --rm -it -v $PWD:/app -p 3000:3000 rails-toolbox
 FROM ruby:3.1.2-alpine3.16
 
-# Add required packages.
+# Add required system packages.
 RUN apk add --no-cache build-base tzdata nodejs yarn sqlite-dev postgresql-dev mysql-dev git
-RUN gem install rails:7.0.4 bundler:2.3.23
 
 # Add user and configure directory.
 RUN adduser -D rails
 USER rails
 WORKDIR /app
 
+# Install gems.
 ENV GEM_HOME=/home/rails/gems
+RUN gem install rails:7.0.4 bundler:2.3.23
 
 CMD ["/bin/sh"]
