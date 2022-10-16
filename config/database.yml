@@ -25,8 +25,8 @@ production:
   # Use PostgreSQL for production and read information from environment variables.
   adapter: postgresql
   encoding: unicode
-  database: "<%= ENV.fetch("POSTGRES_DB") { "rails" } %>"
-  username: "<%= ENV.fetch("POSTGRES_USER") { "rails" } %>"
-  password: "<%= ENV.fetch("POSTGRES_PASSWORD") { "rails" } %>"
-  host: "<%= ENV.fetch("POSTGRES_HOST") { "db" } %>"
-  port: "<%= ENV.fetch("POSTGRES_PORT") { 5432 } %>"
+  database: <%= ENV.fetch("POSTGRES_DB") { "rails" } %>
+  username: <%= ENV.fetch("POSTGRES_USER") { "rails" } %>
+  password: <%= ENV.fetch("POSTGRES_PASSWORD") { "rails" } %>
+  host: <%= ENV.fetch("POSTGRES_HOST") { "db" } %>
+  port: <%= ENV.fetch("POSTGRES_PORT") { 5432 } %>
