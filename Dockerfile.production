@@ -4,7 +4,7 @@
 FROM ruby:3.1.2-alpine3.16
 
 # Add required system packages.
-RUN apk add --no-cache build-base tzdata nodejs yarn postgresql-dev git
+RUN apk add --no-cache build-base tzdata nodejs yarn postgresql-dev git nano
 
 # Add user and configure directory.
 RUN adduser -D rails
