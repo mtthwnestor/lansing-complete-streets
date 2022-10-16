@@ -19,6 +19,9 @@ services:
       context: .
       dockerfile: Dockerfile.production
     restart: always
+    environment:
+      # REMOVE THIS AFTER WE GET A WEB PROXY WORKING IN FRONT OF PUMA.
+      - RAILS_SERVE_STATIC_FILES=true
     ports:
       - 3000:3000
     depends_on:
