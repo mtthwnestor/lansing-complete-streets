@@ -1,0 +1,34 @@
+# Run with: docker compose up --build
+version: '3.1'
+
+services:
+  # TODO: Configure a production web proxy for rails/puma.
+  #web:
+  #  container_name: lcs-web
+  #  image: nginx:latest
+  #  restart: always
+  #  ports:
+  #    - 80:80
+  #  volumes:
+  #    - $PWD/nginx.site:/etc/nginx/sites-available/default
+
+  app:
+    container_name: lcs-app
+    image: mtthwnestor/lansing-complete-streets
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    restart: always
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+
+  db:
+    container_name: lcs-db
+    image: postgres:latest
+    restart: always
+    env_file: ".env"
+    volumes:
+      - /opt/lcs/db:/var/lib/postgresql/data
+
