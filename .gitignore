@@ -39,3 +39,6 @@
 
 # Ignore .env file which may contain sensitive information.
 /.env
+
+# Ignore Mac OS files.
+.DS_Store
