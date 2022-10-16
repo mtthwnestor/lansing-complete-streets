@@ -12,4 +12,6 @@ We are working to bring safe, [protected cycling infrastructure](http://www.prot
 
 * Database initialization: Run `rails db:migrate`
 
-* Deployment instructions: Build and run docker image.
+* Deployment instructions: 
+  * Set POSTGRES_USER and POSTGRES_PASSWORD in `.env`
+  * Build and run in docker via docker-compose: `docker-compose up --build`
