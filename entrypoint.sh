@@ -3,6 +3,7 @@
 #bundle install
 if [ "$RAILS_ENV" == "production" ]; then
     if [ ! -f /app/db/production.sqlite3 ]; then
+        sleep 10
         rails db:create
         touch /app/db/production.sqlite3
     fi
