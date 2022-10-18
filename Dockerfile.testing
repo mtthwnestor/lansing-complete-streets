@@ -24,7 +24,7 @@ ENV RAILS_ENV=test
 ENV RAILS_SERVE_STATIC_FILES=true
 #ENV RAILS_MASTER_KEY=0123456789abcdefghij0123456789ab
 
-RUN bundle config set without 'development' && bundle install --jobs=3 --retry=3
+RUN yarn install && bundle config set without 'development' && bundle install --jobs=3 --retry=3
 RUN rails assets:clobber assets:precompile
 
 EXPOSE 3000
