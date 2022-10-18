@@ -33,3 +33,13 @@
 
 # Ignore .env file which may contain sensitive information.
 /.env
+
+# Ignore Mac OS files.
+.DS_Store
+
+# Ignore compiled CSS/JS (from cssbundler-rails and jsbundler-rails)
+/app/assets/builds/*
+!/app/assets/builds/.keep
+
+# Ignore node/npm/yarn packages/cache.
+/node_modules
