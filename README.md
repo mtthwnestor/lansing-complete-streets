@@ -6,7 +6,9 @@ We are working to bring safe, [protected cycling infrastructure](http://www.prot
 
 * Rails version: `7.0.4`
 
-* Dependencies: Run `bundle install`
+* Dependencies: 
+  * Run `yarn install`
+  * Run `bundle install`
 
 * Database creation: Run `rails db:create`
 
