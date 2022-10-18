@@ -7,7 +7,7 @@ FROM ruby:3.1.2-alpine3.16
 RUN apk add --no-cache build-base tzdata nodejs yarn postgresql-dev git nano npm
 
 # Add user and configure directory.
-RUN adduser -D rails
+RUN mkdir -p /app && chown -hR 1000:1000 /app && adduser -D rails
 USER rails
 WORKDIR /app
 
@@ -25,7 +25,7 @@ ENV RAILS_ENV=production
 #ENV RAILS_MASTER_KEY=0123456789abcdefghij0123456789ab
 
 RUN yarn install && bundle config set without 'development test' && bundle install --jobs=3 --retry=3
-RUN rails assets:clobber assets:precompile
+RUN rails assets:clobber assets:precompile && yarn build:css && yarn build
 
 EXPOSE 3000
 ENTRYPOINT [ "/app/entrypoint.sh" ]
