@@ -15,6 +15,6 @@ WORKDIR /app
 # Install gems.
 ENV GEM_HOME=/home/rails/gems
 ENV PATH="/home/rails/gems/bin:$PATH"
-RUN gem install rails:7.0.4 bundler:2.3.23
+RUN gem install rails:7.0.4 bundler:2.3.23 foreman:0.87.2
 
 CMD ["/bin/sh"]
