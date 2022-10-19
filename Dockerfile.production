@@ -24,7 +24,7 @@ ENV RAILS_ENV=production
 #ENV RAILS_SERVE_STATIC_FILES=true
 #ENV RAILS_MASTER_KEY=0123456789abcdefghij0123456789ab
 
-RUN yarn install && bundle config set without 'development test' && bundle install --jobs=3 --retry=3
+RUN npm config set unsafe-perm true && yarn install && bundle config set without 'development test' && bundle install --jobs=3 --retry=3
 RUN rails assets:clobber assets:precompile && yarn build:css && yarn build
 
 EXPOSE 3000
