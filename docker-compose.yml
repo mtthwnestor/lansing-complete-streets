@@ -20,6 +20,7 @@ services:
       dockerfile: Dockerfile.production
     restart: always
     env_file: ".env"
+    tty: true
     ports:
       - 3000:3000
     depends_on:

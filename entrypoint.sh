@@ -13,4 +13,4 @@ elif [ "$RAILS_ENV" == "test" ]; then
 fi
 rails db:migrate
 
-rails server -b 0.0.0.0
+foreman start -f Procfile.dev
