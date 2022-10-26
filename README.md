@@ -18,5 +18,6 @@ We are working to bring safe, [protected cycling infrastructure](http://www.prot
   * Set `POSTGRES_USER` and `POSTGRES_PASSWORD` in the `.env` file
   * Set the master key, either as `RAILS_MASTER_KEY` in the `.env` file or directly in `config/master.key`
   * If using Puma without a web proxy, set `RAILS_SERVE_STATIC_FILES=true` in the `.env` file
+  * Set `MAILER_USERNAME` and `MAILER_PASSWORD` in the `.env` file
   * Build and run in docker via docker-compose: `docker-compose up --build -d`
   * Subsequent runs do not need the `build` parameter: `docker-compose up -d`
