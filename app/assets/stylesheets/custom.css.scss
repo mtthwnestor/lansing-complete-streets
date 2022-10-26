@@ -2,3 +2,7 @@ $my-alert-margin-bottom: 0;
 .alert {
   margin-bottom: $my-alert-margin-bottom;
 }
+
+div#contact-form {
+  max-width: 480px;
+}
