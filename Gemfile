@@ -75,3 +75,5 @@ gem "cssbundling-rails", "~> 1.1"
 
 
 gem "jsbundling-rails", "~> 1.0"
+
+gem "mail_form", "~> 1.9"
