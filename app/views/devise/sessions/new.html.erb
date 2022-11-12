@@ -1,0 +1,38 @@
+<%= content_for(:title, "Sign In") %>
+<main>
+  <div class="container">
+    <div class="text-center py-5">
+      <h1 class="display-4 fw-bold lh-1 text-center">Sign In</h1>
+      <hr>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div id="devise-form" class="mx-auto">
+        <div class="field mb-3">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field mb-3">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field mb-3">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit "Log in" %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="mx-auto" style="max-width: 480px">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</main>
