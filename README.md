@@ -1,23 +1,9 @@
-# [Lansing Complete Streets](https://www.lansingcompletestreets.org/)
+# ghost-deploy
 
-We are working to bring safe, [protected cycling infrastructure](http://www.protectedintersection.com/) to Michigan Avenue and elsewhere in the Greater Lansing area.
-
-* Ruby version: `3.1.2`
-
-* Rails version: `7.0.4`
-
-* Dependencies: 
-  * Run `yarn install`
-  * Run `bundle install`
-
-* Database creation: Run `rails db:create`
-
-* Database initialization: Run `rails db:migrate`
-
-* Deployment instructions: 
-  * Set `POSTGRES_USER` and `POSTGRES_PASSWORD` in the `.env` file
-  * Set the master key, either as `RAILS_MASTER_KEY` in the `.env` file or directly in `config/master.key`
-  * If using Puma without a web proxy, set `RAILS_SERVE_STATIC_FILES=true` in the `.env` file
-  * Set `MAILER_USERNAME` and `MAILER_PASSWORD` in the `.env` file
-  * Build and run in docker via docker-compose: `docker-compose up --build -d`
-  * Subsequent runs do not need the `build` parameter: `docker-compose up -d`
+1. Initialize the database with `docker compose run --rm db`.
+1. Once it is initialized, exit. Try `ctrl+c`, otherwise, from another terminal, use `docker ps` to find the container and end it with `docker stop container_name`.
+1. Change the `url` environment variable to the server's IP address `http://192.168.1.4:2368/` and start the compose file with `docker compose up -d`.
+1. Visit the server URL and port with the `ghost` path. E.g., `http://192.168.1.4:2368/ghost`.
+1. Create your user account and customize any settings you wish to set up before the site goes public.
+1. Change the `url` environment variable back to your final production URL. E.g., `https://www.piperservers.net/`.
+1. Restart the compose file with `docker compose down && docker compose up -d`.
