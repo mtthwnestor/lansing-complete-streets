@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   ghost:
-    image: ghost:5.91.0
+    image: ghost:5.94.1
     restart: always
     ports:
       - 4278:2368 # Internal server listens on port 2368.
