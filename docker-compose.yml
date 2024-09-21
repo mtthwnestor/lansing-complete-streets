@@ -5,7 +5,7 @@ services:
     image: ghost:5.91.0
     restart: always
     ports:
-      - 2368:2368
+      - 4278:2368 # Internal server listens on port 2368.
     env_file:
       - "env"
     volumes:
